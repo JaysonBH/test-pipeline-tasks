@@ -1,0 +1,16 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source: {repository: hashicorp/terraform}
+
+inputs:
+  - name: terraform-template-aws
+  - name: terraform-state-file
+  - name: git-test
+
+params:
+  terraform_statefile:
+run:
+  path: git-test/terraform_show_statefile.sh
