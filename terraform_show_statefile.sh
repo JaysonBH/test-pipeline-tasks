@@ -1,5 +1,7 @@
 #!/bin/bash
 
+ls -lrtha
+pwd
 cp terraform-state-file/$terraform_statefile terraform-template-aws/pivotal-cf-terraforming-aws*/terraforming-pas/terraform.tfstate
 
 cd terraform-template-aws/pivotal-cf-terraforming-aws*/terraforming-pas
