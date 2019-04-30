@@ -17,7 +17,7 @@ cat variable.txt
 echo "catting local statefile Before Destroy"
 cat terraform.tfstate
 
-terraform destroy -auto-approve -var "env_name"=$env_name -var "access_key"=$access_key -var "secret_key"=$secret_key -var "region"=$region -var "ops_manager_ami"=$ops_manager_ami -var "dns_suffix"=$dns_suffix -var "ssl_cert"=$ssl_cert -var "ssl_private_key"=$ssl_private_key -var-file=variable.txt
+terraform destroy -auto-approve -var "env_name"=$env_name -var "access_key"=$access_key -var "secret_key"=$secret_key -var "region"=$region -var "ops_manager_ami"=$ops_manager_ami -var "dns_suffix"=$dns_suffix -var "ssl_cert"=$ssl_cert -var "ssl_private_key"=$ssl_private_key -var-file=variable.txt -state=../../../terraform-state-file/$terraform_statefile
 
 echo "Copying local statefile to updated location"
 cp terraform.tfstate ../../../updated-state-file/$terraform_statefile
