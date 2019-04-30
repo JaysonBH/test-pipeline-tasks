@@ -7,8 +7,8 @@ echo "Original state file Existance:"
 ls -l ../../../terraform-state-file/$terraform_statefile
 
 echo "availability_zones=$availability_zones" > variable.txt
-echo "ssl_cert = <<SSL_CERT\n$ssl_cert\nSSL_CERT" >> variable.txt
-echo "ssl_private_key = <<SSL_KEY\n$ssl_private_key\nSSL_KEY" >> variable.txt
+echo "ssl_cert = $ssl_cert" >> variable.txt
+echo "ssl_private_key =$ssl_private_key" >> variable.txt
 ls -lrtha
 echo "cating variable.txt containing Availability Zones"
 cat variable.txt
