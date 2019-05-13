@@ -18,10 +18,10 @@ cat variable.txt
 echo "catting local statefile Before Destroy"
 cat terraform.tfstate
 
-terraform destroy -auto-approve -var "env_name"=$env_name \
-  -var "project"=$project -var "region"=$region -var-file=variable.txt \
+terraform destroy -auto-approve \
+  -var "env_name"=$env_name -var "project"=$project -var "region"=$region \
   -var "dns_suffix"=$dns_suffix -var "opsman_image_url"=$opsman_image_url \
-  -state=terraform.tfstate
+  -var-file=variable.txt -state=terraform.tfstate
 
 echo "Copying local statefile to updated location"
 cp terraform.tfstate ../../../updated-state-file/$terraform_statefile
