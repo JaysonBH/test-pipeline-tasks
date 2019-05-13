@@ -6,8 +6,8 @@ terraform init
 echo "Original state file Existance:"
 ls -l ../../../terraform-state-file/$terraform_statefile
 
-echo "Copy Existing Statefile to local directory:"
-cp ../../../terraform-state-file/$terraform_statefile terraform.tfstate
+#echo "Copy Existing Statefile to local directory:"
+#cp ../../../terraform-state-file/$terraform_statefile terraform.tfstate
 
 echo "availability_zones=$availability_zones" > variable.txt
 echo "service_account_key=$service_account_key" > variable.txt
@@ -19,7 +19,7 @@ cat variable.txt
 terraform plan \
   -var "env_name"=$env_name -var "project"=$project -var "region"=$region \
   -var "dns_suffix"=$dns_suffix -var "opsman_image_url"=$opsman_image_url \
-  -var-file=variable.txt -out=terraform.tfplan -state=terraform.tfstate
+  -var-file=variable.txt -out=terraform.tfplan -state=../../../terraform-state-file/$terraform_statefile
 
 terraform apply terraform.tfplan
 
