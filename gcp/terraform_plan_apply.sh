@@ -19,7 +19,7 @@ cat variable.txt
 terraform plan \
   -var "env_name"=$env_name -var "project"=$project -var "region"=$region \
   -var "dns_suffix"=$dns_suffix -var "opsman_image_url"=$opsman_image_url \
-  -var-file=variable.txt -out=terraform.tfplan -state=../../../terraform-state-file/$terraform_statefile
+  -var-file=variable.txt -out=terraform.tfplan -state=terraform.tfstate
 
 terraform apply terraform.tfplan
 
