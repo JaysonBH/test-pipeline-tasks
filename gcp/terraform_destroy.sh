@@ -19,7 +19,7 @@ cat terraform.tfstate
 
 terraform destroy -auto-approve -var "env_name"=$env_name \
   -var "region"=$region -var-file=variable.txt \
-  -var "dns_suffix"=$dns_suffix \
+  -var "dns_suffix"=$dns_suffix -var "opsman_image_url"=$opsman_image_url\
   -state=terraform.tfstate
 
 echo "Copying local statefile to updated location"
