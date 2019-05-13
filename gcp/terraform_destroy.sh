@@ -10,8 +10,9 @@ echo "Copy Existing Statefile to local directory:"
 cp ../../../terraform-state-file/$terraform_statefile terraform.tfstate
 
 echo "availability_zones=$availability_zones" > variable.txt
+echo "service_account_key=$service_account_key" > variable.txt
 ls -lrtha
-echo "cating variable.txt containing Availability Zones"
+echo "cating variable.txt containing Availability Zones and service account key"
 cat variable.txt
 
 echo "catting local statefile Before Destroy"
@@ -20,7 +21,6 @@ cat terraform.tfstate
 terraform destroy -auto-approve -var "env_name"=$env_name \
   -var "project"=$project -var "region"=$region -var-file=variable.txt \
   -var "dns_suffix"=$dns_suffix -var "opsman_image_url"=$opsman_image_url \
-  -var "service_account_key"=$service_account_key \
   -state=terraform.tfstate
 
 echo "Copying local statefile to updated location"
