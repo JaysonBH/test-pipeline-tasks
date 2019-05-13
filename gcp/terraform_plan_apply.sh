@@ -10,7 +10,7 @@ ls -l ../../../terraform-state-file/$terraform_statefile
 #cp ../../../terraform-state-file/$terraform_statefile terraform.tfstate
 
 echo "availability_zones=$availability_zones" > variable.txt
-echo "service_account_key=$service_account_key" > variable.txt
+echo "service_account_key=$service_account_key" >> variable.txt
 ls -lrtha
 echo "cating variable.txt containing Availability Zones and service account key"
 cat variable.txt
