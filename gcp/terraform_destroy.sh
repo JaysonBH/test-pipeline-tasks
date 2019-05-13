@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd terraform-template-aws/pivotal-cf-terraforming-gcp*/terraforming-pas
+cd terraform-template-gcp/pivotal-cf-terraforming-*/terraforming-pas
 terraform init
 
 echo "Original state file Existance:"
